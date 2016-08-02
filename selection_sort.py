@@ -6,15 +6,17 @@ for i in range(100):
 
 def selectSort(lst):
 	srted = 0
-	count = 0
-	while srted<len(lst):
+	while srted<len(lst)/2:
 		small = srted
-		for i in range(srted+1,len(lst)):
+		large = srted
+		for i in range(srted+1,len(lst)-srted):
 			if lst[i]<lst[small]:
 				small = i
-			count += 1
+			if lst[i]>lst[large]:
+				large = i
 		lst[srted], lst[small] = lst[small], lst[srted]
+		lst[len(lst)-1-srted], lst[large] = lst[large],lst[len(lst)-1-srted]
 		srted+=1
-	print count
+	print lst
 
 selectSort(x)
