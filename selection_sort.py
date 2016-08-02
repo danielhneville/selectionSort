@@ -1,7 +1,7 @@
 import random
 
 x = []
-for i in range(10000):
+for i in range(100):
 	x.append(int(round(random.random()*10000)))
 
 def selectSort(lst):
@@ -10,9 +10,9 @@ def selectSort(lst):
 	while srted<len(lst):
 		small = srted
 		for i in range(srted+1,len(lst)):
-			count += 1
 			if lst[i]<lst[small]:
 				small = i
+			count += 1
 		lst[srted], lst[small] = lst[small], lst[srted]
 		srted+=1
 	print count
